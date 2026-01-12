@@ -1,3 +1,4 @@
+>
 <!DOCTYPE html>  
 <html>  
 <head>  
@@ -27,7 +28,7 @@
       background: #000;  
       object-fit: contain;  
     }  
-    /* Shaka Spinner Hiding - Loading spinner को छुपाने के लिए */
+    /* Spinner को छुपाने के लिए */
     .shaka-spinner-container,  
     .shaka-spinner,  
     .shaka-spinner-svg {  
@@ -39,7 +40,7 @@
 </head>  
 <body>  
   <div class="shaka-video-container" data-shaka-player>  
-    <video autoplay playsinline preload="metadata" poster="https://i.ibb.co/v4vH31X5/image-search-1768194333015.jpg"></video>  
+    <video autoplay playsinline preload="metadata" poster="https://i.ibb.co/VrsnMcD/image-search-1765615733453.webp"></video>  
   </div>  
   
   <script>  
@@ -66,7 +67,7 @@
         ],  
         volumeBarColors: {  
           base: 'rgba(255, 192, 203, 0.3)',  
-          level: 'rgb(255, 105, 180)'
+          level: 'rgb(255, 105, 180)'  
         },  
         seekBarColors: {  
           base: 'rgba(255, 255, 0, 0.3)',  
@@ -75,15 +76,15 @@
         }  
       });  
   
-      // ✅ UPDATED DRM Key (CricLife2 के लिए)
+      // ✅ आपकी नई DRM Key (Key ID : Key)
       let drmConfig = {  
         clearKeys: {  
-          "48bef83b4c6a3c5189b01b0126210da4": "bd085230b7b09e50954fe0af111a8a9f"  
+          "b857ffa6bd6f6f21747660f98a20e6ac": "c40d54a013fb1cb2dd622462c95144e2"  
         }  
       };  
   
-      // ✅ UPDATED MPD URL (Starzplay Arabia)
-      let streamUrl = "https://ev-fast-mpd.starzplayarabia.com/live/eds/CricLife2/DASH/CricLife2.mpd";  
+      // ✅ आपका नया MPD URL
+      let streamUrl = "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/vy7axsl8tb/out/v1/9076404ee833486c85b68a1e79ab17da/cenc.mpd";  
   
       player.configure({  
         drm: drmConfig,  
@@ -99,6 +100,7 @@
             backoffFactor: 1.2  
           },  
           segmentRequestTimeout: 8000,  
+          segmentPrefetchLimit: 2,  
           useNativeHlsOnSafari: true  
         },  
         manifest: {  
@@ -115,7 +117,7 @@
   
       try {  
         await player.load(streamUrl);  
-        console.log("CricLife2 stream loaded successfully");  
+        console.log("Stream loaded successfully!");  
       } catch (error) {  
         console.error('Load error:', error);  
       }  
